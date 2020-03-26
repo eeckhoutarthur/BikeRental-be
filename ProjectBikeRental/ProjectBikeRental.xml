@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProjectBikeRental</name>
+    </assembly>
+    <members>
+        <member name="M:ProjectBikeRental.Controllers.BikesController.GetBikes">
+            <summary>
+            Geeft alle fietsen terug, gesorteerd op stijgende prijs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.BikesController.Get(System.Int32)">
+            <summary>
+            Geeft de fiets met het meegegeven id terug
+            </summary>
+            <param name="id">De id van de fiets</param>
+            <returns>De fiets</returns>
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.BikesController.CreateBike(ProjectBikeRental.Models.Bike)">
+            <summary>
+            Voegt een nieuwe fiets toe
+            </summary>
+            <param name="bike">De nieuwe fiets</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.BikesController.UpdateBike(System.Int32,ProjectBikeRental.Models.Bike)">
+            <summary>
+            Past een bestaande fiets aan
+            </summary>
+            <param name="id">De id van de fiets die moet aangepast worden</param>
+            <param name="bike">De aangepaste fiets</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.BikesController.DeleteBike(System.Int32)">
+            <summary>
+            Verwijdert een fiets 
+            </summary>
+            <param name="id">De id van de fiets die verwijderd moet worden</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

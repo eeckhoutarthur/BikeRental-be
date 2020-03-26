@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,16 +11,22 @@ namespace ProjectBikeRental.Models
         #region Properties
         public int ID { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public decimal Price { get; set; }
 
+        [Required]
         public Brand BikeBrand { get; set; }
 
+        [Required]
         public Groupset BikeGroupset { get; set; }
 
+        [Required]
         public Type BikeType { get; set; }
 
+        [Required]
         public bool DiscBrakes { get; set; }
         #endregion
 
@@ -37,7 +44,11 @@ namespace ProjectBikeRental.Models
             BikeType = bikeType;
             DiscBrakes = discBrakes;
             Price = price;
-        } 
+        }
+
+        private class RequireedAttribute : Attribute
+        {
+        }
         #endregion
     }
 }

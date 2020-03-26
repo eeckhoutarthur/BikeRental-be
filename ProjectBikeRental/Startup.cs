@@ -26,7 +26,13 @@ namespace ProjectBikeRental
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerDocument();
+            services.AddOpenApiDocument(d =>
+            {
+                d.DocumentName = "apidocumentation";
+                d.Title = "Bike API";
+                d.Version = "V1";
+                d.Description = "The Recipe API documentation description.";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
