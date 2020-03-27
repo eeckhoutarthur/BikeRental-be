@@ -15,7 +15,7 @@ namespace ProjectBikeRental.Data.Repositories
         public BikeRepository(BikeDbContext context)
         {
             _context = context;
-            _bikes = context.bikes;
+            _bikes = context.Bikes;
         }
 
         public void Add(Bike bike)
@@ -38,7 +38,7 @@ namespace ProjectBikeRental.Data.Repositories
             return _bikes.SingleOrDefault(b => b.ID == id);
         }
 
-        public IEnumerable<Bike> GetBy(Models.BikeType? type = null, Brand? brand = null, Groupset? groupset = null)
+        public IEnumerable<Bike> GetBy(Models.BikeType? type = null, BrandEnum? brand = null, Groupset? groupset = null)
         {
             return _bikes.Where(b => b.BikeType == type && b.BikeBrand == brand && b.BikeGroupset == groupset);
         }

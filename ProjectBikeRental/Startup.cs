@@ -67,7 +67,7 @@ namespace ProjectBikeRental
             {
                 endpoints.MapControllers();
             });
-            initializer.iniInitializeData();
+            initializer.IniInitializeData();
         }
     }
 }

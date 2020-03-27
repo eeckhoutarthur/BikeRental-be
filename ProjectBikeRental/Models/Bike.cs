@@ -11,13 +11,15 @@ namespace ProjectBikeRental.Models
     {
         #region Properties
         public int ID { get; set; }
+/*        public int BrandId { get; set; }*/
         [Required]
         public string Name { get; set; }
         [Required]
         public decimal Price { get; set; }
         [Required]
         public bool DiscBrakes { get; set; }
-        public Brand BikeBrand { get; set; }
+        [Required]
+        public BrandEnum BikeBrand { get; set; }
         public Groupset BikeGroupset { get; set; }
         public BikeType BikeType { get; set; }
 
@@ -28,7 +30,7 @@ namespace ProjectBikeRental.Models
         {
         }
 
-        public Bike(string name, Brand bikeBrand, Groupset bikeGroupset, BikeType bikeType, bool discBrakes, decimal price)
+        public Bike(string name, BrandEnum bikeBrand, Groupset bikeGroupset, BikeType bikeType, bool discBrakes, decimal price)
         {
             Name = name;
             BikeBrand = bikeBrand;

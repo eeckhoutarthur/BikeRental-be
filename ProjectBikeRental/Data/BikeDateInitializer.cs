@@ -15,7 +15,7 @@ namespace ProjectBikeRental.Data
             _dbContext = dbContext;
         }
 
-        public void iniInitializeData()
+        public void IniInitializeData()
         {
             _dbContext.Database.EnsureDeleted();
             if (_dbContext.Database.EnsureCreated())
@@ -23,10 +23,10 @@ namespace ProjectBikeRental.Data
 /*                Bike tarmac = new Bike("Tarmac",Brand.Specialized,Groupset.Shimano,BikeType.Road_Bike,true,5000m);
                 Bike madone = new Bike("Madone SLR 9 Disc eTap", Brand.Trek, Groupset.Sram, BikeType.Road_Bike, true, 12600m);*/
 
-                Bike[] bikes = new Bike[] { new Bike("Tarmac", Brand.Specialized, Groupset.Shimano, BikeType.Road_Bike, true, 5000m), 
-                    new Bike("Madone SLR 9 Disc eTap", Brand.Trek, Groupset.Sram, BikeType.Road_Bike, true, 12600m) };
+                Bike[] bikes = new Bike[] { new Bike("Tarmac",BrandEnum.Specialized, Groupset.Shimano, BikeType.Road_Bike, true, 5000m), 
+                    new Bike("Madone SLR 9 Disc eTap",BrandEnum.Trek, Groupset.Sram, BikeType.Road_Bike, true, 12600m) };
 
-                _dbContext.bikes.AddRange(bikes);
+                _dbContext.Bikes.AddRange(bikes);
                 _dbContext.SaveChanges();
             }
         }

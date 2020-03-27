@@ -10,7 +10,7 @@ namespace ProjectBikeRental.Data
 {
     public class BikeDbContext : DbContext
     {
-        public DbSet<Bike> bikes { get; set; }
+        public DbSet<Bike> Bikes { get; set; }
 
         public BikeDbContext(DbContextOptions<BikeDbContext> options) : base(options){}
 
@@ -22,6 +22,9 @@ namespace ProjectBikeRental.Data
             builder.Entity<Bike>().Property(b => b.Name).IsRequired().HasMaxLength(100);
             builder.Entity<Bike>().Property(b => b.Price).IsRequired().HasColumnType("decimal(18,2)"); ;
             builder.Entity<Bike>().Property(b => b.DiscBrakes).IsRequired();
+/*
+            builder.Entity<Brand>().HasMany(br => br.Bikes).WithOne(b => b.BikeBrand);*/
+/*            builder.Entity<Brand>().Property(b => b.Name).IsRequired().HasMaxLength(150);*/
         }
     }
 }
