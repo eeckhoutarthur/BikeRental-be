@@ -8,8 +8,9 @@ using ProjectBikeRental.Models;
 
 namespace ProjectBikeRental.Controllers
 {
-    [Route("api/[controller]")]
+    [ApiConventionType(typeof(DefaultApiConventions))]
     [Produces("application/json")]
+    [Route("api/[controller]")]
     [ApiController]
     public class BikesController : ControllerBase
     {
@@ -46,7 +47,7 @@ namespace ProjectBikeRental.Controllers
         /// <summary>
         /// Voegt een nieuwe fiets toe
         /// </summary>
-        /// <param name="bike">De nieuwe fiets</param>
+        /// <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
         /// <returns></returns>
         [HttpPost]
         public ActionResult<Bike> CreateBike(Bike bike)
@@ -59,8 +60,8 @@ namespace ProjectBikeRental.Controllers
         /// <summary>
         /// Past een bestaande fiets aan
         /// </summary>
-        /// <param name="id">De id van de fiets die moet aangepast worden</param>
-        /// <param name="bike">De aangepaste fiets</param>
+        /// <param name="id">De id van de fiets die moet aangepast worden. <br /> Bij het invullen van een lege id zal er een 404 foutmelding verschijnen</param>
+        /// <remarks>Bij het bewerken van de gegevens geef je het vedlje "id" de id van de fiets die bewerkt moet worden.</remarks>
         /// <returns></returns>
         [HttpPut("{id}")]
         public IActionResult UpdateBike(int id, Bike bike)

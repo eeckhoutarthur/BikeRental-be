@@ -21,20 +21,20 @@
             <summary>
             Voegt een nieuwe fiets toe
             </summary>
-            <param name="bike">De nieuwe fiets</param>
+            <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
             <returns></returns>
         </member>
         <member name="M:ProjectBikeRental.Controllers.BikesController.UpdateBike(System.Int32,ProjectBikeRental.Models.Bike)">
             <summary>
             Past een bestaande fiets aan
             </summary>
-            <param name="id">De id van de fiets die moet aangepast worden</param>
-            <param name="bike">De aangepaste fiets</param>
+            <param name="id">De id van de fiets die moet aangepast worden. <br /> Bij het invullen van een lege id zal er een 404 foutmelding verschijnen</param>
+            <remarks>Bij het bewerken van de gegevens geef je het vedlje "id" de id van de fiets die bewerkt moet worden.</remarks>
             <returns></returns>
         </member>
         <member name="M:ProjectBikeRental.Controllers.BikesController.DeleteBike(System.Int32)">
             <summary>
-            Verwijdert een fiets 
+            Verwijderd een fiets 
             </summary>
             <param name="id">De id van de fiets die verwijderd moet worden</param>
             <returns></returns>
