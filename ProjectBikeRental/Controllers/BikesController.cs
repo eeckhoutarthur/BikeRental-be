@@ -66,21 +66,21 @@ namespace ProjectBikeRental.Controllers
         /// Geeft de fiets met het meegegeven id terug
         /// </summary>
         /// <param name="id">De email van de klant</param>
-        /// <returns>De fiets</returns>
-        [HttpGet("{id}")]
+        /// <returns>De fiets</returns>*/
+/*        [HttpGet("{id}")]
         public ActionResult<Orders> GetOrder(int id)
         {
             Orders order = _orderRepository.GetBy(id);
             if (order == null)
                 return NotFound();
             return order;
-        }
+        }*/
 
-/*        /// <summary>
+        /// <summary>
         /// Voegt een nieuwe fiets toe
         /// </summary>
         /// <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
-        /// <returns></returns>*/
+        /// <returns></returns>
         [HttpPost]
         public ActionResult<Bike> CreateBike(Bike bike)
         {
