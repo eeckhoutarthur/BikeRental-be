@@ -26,7 +26,13 @@ namespace ProjectBikeRental.Data
                 Bike[] bikes = new Bike[] { new Bike("Tarmac",BrandEnum.Specialized, Groupset.Shimano, BikeType.Road_Bike, true, 5000m), 
                     new Bike("Madone SLR 9 Disc eTap",BrandEnum.Trek, Groupset.Sram, BikeType.Road_Bike, true, 12600m) };
 
+                Customer customer = new Customer("Eeckhout","Arthur","1234455","arthur.eeckhout@student.hogent/be");
+
+/*                Orders order = new Orders(new DateTime(2020,02,13), new DateTime(2020,02,16));*/
+
                 _dbContext.Bikes.AddRange(bikes);
+                _dbContext.Customers.Add(customer);
+/*                _dbContext.Orders.Add(order);*/
                 _dbContext.SaveChanges();
             }
         }

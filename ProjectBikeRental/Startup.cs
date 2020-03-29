@@ -35,6 +35,8 @@ namespace ProjectBikeRental
 
             services.AddScoped<BikeDateInitializer>();
             services.AddScoped<IBikeRepository, BikeRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             services.AddOpenApiDocument(d =>
             {

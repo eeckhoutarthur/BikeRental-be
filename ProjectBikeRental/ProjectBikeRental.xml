@@ -17,13 +17,6 @@
             <param name="id">De id van de fiets</param>
             <returns>De fiets</returns>
         </member>
-        <member name="M:ProjectBikeRental.Controllers.BikesController.CreateBike(ProjectBikeRental.Models.Bike)">
-            <summary>
-            Voegt een nieuwe fiets toe
-            </summary>
-            <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
-            <returns></returns>
-        </member>
         <member name="M:ProjectBikeRental.Controllers.BikesController.UpdateBike(System.Int32,ProjectBikeRental.Models.Bike)">
             <summary>
             Past een bestaande fiets aan

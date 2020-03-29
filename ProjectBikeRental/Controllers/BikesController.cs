@@ -15,9 +15,13 @@ namespace ProjectBikeRental.Controllers
     public class BikesController : ControllerBase
     {
         private readonly IBikeRepository _bikeRepository;
-        public BikesController(IBikeRepository bikeRepository)
+        private readonly ICustomerRepository _customerRepository;
+        private readonly IOrderRepository _orderRepository;
+        public BikesController(IBikeRepository bikeRepository, ICustomerRepository customerRepository, IOrderRepository orderRepository)
         {
             _bikeRepository = bikeRepository;
+            _customerRepository = customerRepository;
+            _orderRepository = orderRepository;
         }
 
         /// <summary>
@@ -44,11 +48,39 @@ namespace ProjectBikeRental.Controllers
             return bike;
         }
 
+/*        /// <summary>
+        /// Geeft de fiets met het meegegeven id terug
+        /// </summary>
+        /// <param name="email">De email van de klant</param>
+        /// <returns>De fiets</returns>*/
+/*        [HttpGet("{email}")]
+        public ActionResult<Customer> GetCustomer(string email)
+        {
+            Customer customer = _customerRepository.GetByEmail(email);
+            if (email == null)
+                return NotFound();
+            return customer;
+        }*/
+/*
         /// <summary>
+        /// Geeft de fiets met het meegegeven id terug
+        /// </summary>
+        /// <param name="id">De email van de klant</param>
+        /// <returns>De fiets</returns>
+        [HttpGet("{id}")]
+        public ActionResult<Orders> GetOrder(int id)
+        {
+            Orders order = _orderRepository.GetBy(id);
+            if (order == null)
+                return NotFound();
+            return order;
+        }
+
+/*        /// <summary>
         /// Voegt een nieuwe fiets toe
         /// </summary>
         /// <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
-        /// <returns></returns>
+        /// <returns></returns>*/
         [HttpPost]
         public ActionResult<Bike> CreateBike(Bike bike)
         {
@@ -56,6 +88,34 @@ namespace ProjectBikeRental.Controllers
             _bikeRepository.SaveChanges();
             return CreatedAtAction(nameof(bike), new {id = bike.ID},bike);
         }
+
+/*        /// <summary>
+        /// Voegt een nieuwe klant toe
+        /// </summary>
+        /// <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
+        /// <returns></returns>*/
+/*        [HttpPost]
+        public ActionResult<Bike> CreateCustomer(Customer customer)
+        {
+            _customerRepository.Add(customer);
+            _customerRepository.SaveChanges();
+            return CreatedAtAction(nameof(customer), new { id = customer.CustomerId }, customer);
+        }*/
+
+
+/*        /// <summary>
+        /// Voegt een nieuwe reservering toe
+        /// </summary>
+        /// <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
+        /// <returns></returns>*/
+/*        [HttpPost]
+        public ActionResult<Bike> CreateOrder(Orders order)
+        {
+            _orderRepository.Add(order);
+            _customerRepository.SaveChanges();
+            return CreatedAtAction(nameof(order), new { id = order.OrderId }, order);
+        }*/
+
 
         /// <summary>
         /// Past een bestaande fiets aan
