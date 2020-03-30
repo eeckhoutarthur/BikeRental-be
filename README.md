@@ -30,6 +30,11 @@ Dit kan terug op dezelfde manier gecontroleerd worden, zoals bij de CreateBike.
 Dit kan terug op dezelfde manier gecontroleerd worden.
 
 ## Klassendiagram
+Op dit moment wordt de klasse Brand nog niet gebruikt. Momenteel maak ik gebruik van de enum klasse.
+
+![](/images/klassendiagramGoed.PNG)
+
+### Database
 ![](/images/klassendiagram.PNG)
 
 ## Opstart
