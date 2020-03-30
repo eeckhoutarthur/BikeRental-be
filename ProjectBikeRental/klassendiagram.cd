@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="ProjectBikeRental.Models.Bike">
+    <Position X="8" Y="1" Width="7.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAIAAAAQAAgAAgAAIAAAQAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Models\Bike.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ProjectBikeRental.Models.Brand">
+    <Position X="16.25" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Brand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBikeRental.Models.Customer">
+    <Position X="8" Y="4.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAAEAgACAAAAAAAAAAAAQAAAAAABAAAAAAAAAAAQA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ProjectBikeRental.Models.Orders">
+    <Position X="14.5" Y="5.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Models\Orders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ProjectBikeRental.Models.IBikeRepository">
+    <Position X="0.5" Y="0.5" Width="6.75" />
+    <TypeIdentifier>
+      <HashCode>gAYAAAAAAAAAAAAAAAAAAAAAAAEIAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Models\IBikeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjectBikeRental.Models.ICustomerRepository">
+    <Position X="0.5" Y="3" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gAIAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ICustomerRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjectBikeRental.Models.IOrderRepository">
+    <Position X="0.5" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IOrderRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ProjectBikeRental.Models.BikeType">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAABAAAAAAw=</HashCode>
+      <FileName>Models\BikeType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ProjectBikeRental.Models.BrandEnum">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAIAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BrandEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ProjectBikeRental.Models.Groupset">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Groupset.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
