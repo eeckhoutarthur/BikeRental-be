@@ -28,6 +28,11 @@ namespace ProjectBikeRental.Data.Repositories
             return _customers.FirstOrDefault(c => c.Email == email);
         }
 
+        public IEnumerable<Customer> GetAll()
+        {
+            return _customers.ToList();
+        }
+
         public void SaveChanges()
         {
             _context.SaveChanges();
