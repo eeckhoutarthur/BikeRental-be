@@ -9,6 +9,7 @@ namespace ProjectBikeRental.Models
     {
         void Add(Orders orders);
         Orders GetBy(int id);
+        IEnumerable<Orders> GetAll();
         void SaveChanges();
     }
 }

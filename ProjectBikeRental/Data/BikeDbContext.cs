@@ -26,7 +26,7 @@ namespace ProjectBikeRental.Data
             builder.Entity<Bike>().Property(b => b.Price).IsRequired().HasColumnType("decimal(18,2)"); ;
             builder.Entity<Bike>().Property(b => b.DiscBrakes).IsRequired();
 
-            builder.Entity<Bike>().HasMany(b => b.Orders).WithOne().IsRequired().OnDelete(DeleteBehavior.Restrict);
+/*            builder.Entity<Bike>().HasMany(b => b.Orders).WithOne().IsRequired().OnDelete(DeleteBehavior.Restrict);*/
 
             //Mapping Customer
             builder.Entity<Customer>().HasKey(c => c.CustomerId);
@@ -35,10 +35,12 @@ namespace ProjectBikeRental.Data
             builder.Entity<Customer>().Property(c => c.GSM).IsRequired().HasMaxLength(100);
             builder.Entity<Customer>().Property(c => c.Email).IsRequired().HasMaxLength(100);
 
-            builder.Entity<Customer>().HasMany(c => c.Orders).WithOne().IsRequired().OnDelete(DeleteBehavior.Restrict);
+/*            builder.Entity<Customer>().HasMany(c => c.Orders).WithOne().IsRequired().OnDelete(DeleteBehavior.Restrict);*/
 
             //Mapping Orders
             builder.Entity<Orders>().HasKey(o => o.OrderId);
+            builder.Entity<Orders>().HasOne(o => o.Bike).WithMany();
+            builder.Entity<Orders>().HasOne(o => o.Customer).WithMany();
 
 /*
             builder.Entity<Brand>().HasMany(br => br.Bikes).WithOne(b => b.BikeBrand);*/

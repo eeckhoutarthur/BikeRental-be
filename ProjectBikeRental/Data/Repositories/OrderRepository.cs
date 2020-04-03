@@ -23,6 +23,11 @@ namespace ProjectBikeRental.Data.Repositories
             _orders.Add(orders);
         }
 
+        public IEnumerable<Orders> GetAll()
+        {
+            return _orders.ToList().OrderByDescending(o => o.StartDate);
+        }
+
         public Orders GetBy(int id)
         {
             return _orders.SingleOrDefault(o => o.OrderId == id);
