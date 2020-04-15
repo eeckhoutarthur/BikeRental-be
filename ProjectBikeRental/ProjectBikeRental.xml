@@ -48,13 +48,13 @@
         </member>
         <member name="M:ProjectBikeRental.Controllers.OrderController.GetAll">
             <summary>
-            Geeft alle bestellingen terug
+            Geeft alle bestellingen terug. De nieuwste bestelling komt als eerste te staan.
             </summary>
             <returns>De fiets</returns>*/
         </member>
         <member name="M:ProjectBikeRental.Controllers.OrderController.CreateOrder(ProjectBikeRental.Models.Orders)">
             <summary>
-            Voegt een nieuwe reservering toe
+            Voegt een nieuwe bestelling toe
             </summary>
             <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
             <returns></returns>*/
