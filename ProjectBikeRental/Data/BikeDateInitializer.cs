@@ -24,7 +24,10 @@ namespace ProjectBikeRental.Data
                 Bike madone = new Bike("Madone SLR 9 Disc eTap", Brand.Trek, Groupset.Sram, BikeType.Road_Bike, true, 12600m);*/
 
                 Bike[] bikes = new Bike[] { new Bike("Tarmac",BrandEnum.Specialized, Groupset.Shimano, BikeType.Road_Bike, true, 5000m), 
-                    new Bike("Madone SLR 9 Disc eTap",BrandEnum.Trek, Groupset.Sram, BikeType.Road_Bike, true, 12600m) };
+                    new Bike("Madone SLR 9 Disc eTap",BrandEnum.Trek, Groupset.Sram, BikeType.Road_Bike, true, 12600m),
+                    new Bike("S-Works Epic Hardtail AXS",BrandEnum.Specialized, Groupset.Sram,BikeType.Mountain_Bike,true,9000m),
+                    new Bike("Kanzoe Ultegra",BrandEnum.Ridley, Groupset.Shimano,BikeType.E_Bike,true,7000m)
+                };
 
                 Customer customer = new Customer("Eeckhout", "Arthur", "1234455", "arthur.eeckhout@student.hogent/be");
                 /*                customer.AddOrder(new Orders(new DateTime(2020, 02, 13), new DateTime(2020, 02, 16)))*/
