@@ -72,7 +72,7 @@ namespace ProjectBikeRental.Controllers
         {
             _bikeRepository.Add(bike);
             _bikeRepository.SaveChanges();
-            return CreatedAtAction(nameof(bike), new {id = bike.ID},bike);
+            return CreatedAtAction(nameof(Get), new { id = bike.ID }, bike);
         }
 
         /*        /// <summary>
