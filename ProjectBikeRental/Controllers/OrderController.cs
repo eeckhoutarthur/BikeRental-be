@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjectBikeRental.Models;
@@ -10,6 +12,7 @@ namespace ProjectBikeRental.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class OrderController : ControllerBase
     {
         private readonly IOrderRepository _orderRepository;
@@ -34,13 +37,23 @@ namespace ProjectBikeRental.Controllers
         }
 
         /// <summary>
-        /// Geeft alle bestellingen terug. De nieuwste bestelling komt als eerste te staan.
+        /// Geeft alle bestellingen terug. De fiets die eerst moet verhuurd worden komt boven in de lijst te staan.
         /// </summary>
         /// <returns>De fiets</returns>*/
         [HttpGet]
+        [Authorize(Policy = "AdminOnly")]
         public IEnumerable<Orders> GetAll()
         {
-            return _orderRepository.GetAll();
+            return _orderRepository.GetAll().OrderBy(o => o.StartDate);
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult<Orders> Get(int id)
+        {
+            Orders order = _orderRepository.GetBy(id);
+            if (order == null)
+                return NotFound();
+            return order;
         }
 
         /// <summary>
@@ -53,9 +66,7 @@ namespace ProjectBikeRental.Controllers
         {
             _orderRepository.Add(order);
             _orderRepository.SaveChanges();
-            return CreatedAtAction(nameof(order), new { id = order.OrderId }, order);
+            return CreatedAtAction(nameof(Get), new { id = order.OrderId }, order);
         }
-
-
     }
 }

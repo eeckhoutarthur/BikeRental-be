@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -45,6 +46,12 @@ namespace ProjectBikeRental
             services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             services.AddIdentity<IdentityUser, IdentityRole>(cfg => cfg.User.RequireUniqueEmail = true).AddEntityFrameworkStores<BikeDbContext>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", policy => policy.RequireClaim(ClaimTypes.Role, "admin"));
+                options.AddPolicy("user", policy => policy.RequireClaim(ClaimTypes.Role, "user"));
+            });
 
             services.Configure<IdentityOptions>(options =>
             {

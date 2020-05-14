@@ -72,26 +72,13 @@ namespace ProjectBikeRental.Controllers
         /// <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
         /// <returns></returns>
         [HttpPost]
+        [Authorize(Policy = "AdminOnly")]
         public ActionResult<Bike> CreateBike(Bike bike)
         {
             _bikeRepository.Add(bike);
             _bikeRepository.SaveChanges();
             return CreatedAtAction(nameof(Get), new { id = bike.ID }, bike);
         }
-
-        /*        /// <summary>
-                /// Voegt een nieuwe klant toe
-                /// </summary>
-                /// <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
-                /// <returns></returns>*/
-        /*        [HttpPost]
-                public ActionResult<Bike> CreateCustomer(Customer customer)
-                {
-                    _customerRepository.Add(customer);
-                    _customerRepository.SaveChanges();
-                    return CreatedAtAction(nameof(customer), new { id = customer.CustomerId }, customer);
-                }*/
-
 
         /// <summary>
         /// Past een bestaande fiets aan
@@ -100,6 +87,7 @@ namespace ProjectBikeRental.Controllers
         /// <remarks>Bij het bewerken van de gegevens geef je het vedlje "id" de id van de fiets die bewerkt moet worden.</remarks>
         /// <returns></returns>
         [HttpPut("{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public IActionResult UpdateBike(int id, Bike bike)
         {
             if (id != bike.ID)
@@ -116,6 +104,7 @@ namespace ProjectBikeRental.Controllers
         /// <param name="id">De id van de fiets die verwijderd moet worden</param>
         /// <returns></returns>
         [HttpDelete("{id}")]
+        [Authorize(Policy = "AdminOnly")]
         public IActionResult DeleteBike(int id)
         {
             Bike bike = _bikeRepository.GetBy(id);

@@ -68,7 +68,7 @@
         </member>
         <member name="M:ProjectBikeRental.Controllers.OrderController.GetAll">
             <summary>
-            Geeft alle bestellingen terug. De nieuwste bestelling komt als eerste te staan.
+            Geeft alle bestellingen terug. De fiets die eerst moet verhuurd worden komt boven in de lijst te staan.
             </summary>
             <returns>De fiets</returns>*/
         </member>
