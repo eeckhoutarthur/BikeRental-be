@@ -8,6 +8,8 @@ namespace ProjectBikeRental.Models
     public class Orders
     {
         public int OrderId { get; set; }
+        //-> FK
+        public int CustomerId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public Bike Bike { get; set; }
@@ -15,7 +17,7 @@ namespace ProjectBikeRental.Models
 
         public Orders(){}
 
-        public Orders(DateTime start, DateTime end,Bike bike,Customer customer)
+        public Orders(DateTime start, DateTime end,Bike bike, Customer customer)
         {
             StartDate = start;
             EndDate = end;

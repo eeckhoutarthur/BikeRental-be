@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjectBikeRental.Models;
@@ -12,6 +14,7 @@ namespace ProjectBikeRental.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)] //-> Zorgt ervoor dat je moet aangemeld zijn om de endpoints te gebruiken
     public class BikesController : ControllerBase
     {
         private readonly IBikeRepository _bikeRepository;
@@ -27,6 +30,7 @@ namespace ProjectBikeRental.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [AllowAnonymous]
         public IEnumerable<Bike> GetBikes()
         {
             return _bikeRepository.GetAll().OrderBy(b => b.Price);
