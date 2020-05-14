@@ -47,15 +47,6 @@ namespace ProjectBikeRental.Controllers
             return _orderRepository.GetAll().OrderBy(o => o.StartDate);
         }
 
-        [HttpGet("{id}")]
-        public ActionResult<Orders> Get(int id)
-        {
-            Orders order = _orderRepository.GetBy(id);
-            if (order == null)
-                return NotFound();
-            return order;
-        }
-
         /// <summary>
         /// Voegt een nieuwe bestelling toe
         /// </summary>
@@ -66,7 +57,7 @@ namespace ProjectBikeRental.Controllers
         {
             _orderRepository.Add(order);
             _orderRepository.SaveChanges();
-            return CreatedAtAction(nameof(Get), new { id = order.OrderId }, order);
+            return CreatedAtAction(nameof(GetOrder), new { id = order.OrderId }, order);
         }
     }
 }
