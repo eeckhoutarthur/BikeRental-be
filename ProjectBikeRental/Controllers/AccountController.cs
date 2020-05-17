@@ -66,17 +66,17 @@ namespace ProjectBikeRental.Controllers
         /// </summary>
         /// <param name="model">the user details</param>
         /// <returns></returns>
-        [AllowAnonymous]
         [HttpPost("register")]
+        [AllowAnonymous]
         public async Task<ActionResult<String>> Register(RegisterDTO model)
         {
             IdentityUser user = new IdentityUser { UserName = model.Email, Email = model.Email };
-            Customer customer = new Customer { LastName = model.LastName, FirstName = model.FirstName, Email = model.Email};
+            Customer customer = new Customer { LastName = model.LastName, FirstName = model.FirstName, Email = model.Email,GSM = "0000"};
             var result = await _userManager.CreateAsync(user, model.Password);
 
             if (result.Succeeded)
             {
-                await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, "user"));
+                await _userManager.AddClaimAsync(user, new Claim("Rol", "user"));
                 _customerRepository.Add(customer);
                 _customerRepository.SaveChanges();
                 string token = await GetTokenAsync(user);

@@ -53,7 +53,7 @@ namespace ProjectBikeRental.Data
         {
             var user = new IdentityUser { UserName = email, Email = email };
             await _userManager.CreateAsync(user, password);
-            await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, admin ? "admin" : "user"));
+            await _userManager.AddClaimAsync(user, new Claim("Rol", admin ? "admin" : "user"));
         }
     }
 }

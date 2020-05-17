@@ -49,8 +49,8 @@ namespace ProjectBikeRental
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("AdminOnly", policy => policy.RequireClaim(ClaimTypes.Role, "admin"));
-                options.AddPolicy("user", policy => policy.RequireClaim(ClaimTypes.Role, "user"));
+                options.AddPolicy("AdminOnly", policy => policy.RequireClaim("Rol", "admin"));
+                options.AddPolicy("user", policy => policy.RequireClaim("Rol", "user"));
             });
 
             services.Configure<IdentityOptions>(options =>
