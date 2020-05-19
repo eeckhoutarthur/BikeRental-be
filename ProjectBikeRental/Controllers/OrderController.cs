@@ -16,10 +16,12 @@ namespace ProjectBikeRental.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrderRepository _orderRepository;
+        private readonly IBikeRepository _bikerepo;
 
-        public OrderController(IOrderRepository orderRepository)
+        public OrderController(IOrderRepository orderRepository, IBikeRepository bikerepo)
         {
             _orderRepository = orderRepository;
+            _bikerepo = bikerepo;
         }
 
         /// <summary>
@@ -42,6 +44,7 @@ namespace ProjectBikeRental.Controllers
         /// <returns>De fiets</returns>*/
         [HttpGet]
         [Authorize(Policy = "AdminOnly")]
+        [AllowAnonymous]
         public IEnumerable<Orders> GetAll()
         {
             return _orderRepository.GetAll().OrderBy(o => o.StartDate);
@@ -55,7 +58,7 @@ namespace ProjectBikeRental.Controllers
         [HttpPost]
         public ActionResult<Orders> CreateOrder(Orders order)
         {
-            _orderRepository.Add(order);
+            _orderRepository.Add(new Orders(order.StartDate, order.EndDate, _bikerepo.GetBy(order.Bike.ID), order.customerEmail));
             _orderRepository.SaveChanges();
             return CreatedAtAction(nameof(GetOrder), new { id = order.OrderId }, order);
         }

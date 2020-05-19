@@ -19,10 +19,9 @@ namespace ProjectBikeRental.Controllers
     {
         private readonly IBikeRepository _bikeRepository;
         private readonly ICustomerRepository _customerRepository;
-        public BikesController(IBikeRepository bikeRepository, ICustomerRepository customerRepository)
+        public BikesController(IBikeRepository bikeRepository)
         {
             _bikeRepository = bikeRepository;
-            _customerRepository = customerRepository;
         }
 
         /// <summary>
