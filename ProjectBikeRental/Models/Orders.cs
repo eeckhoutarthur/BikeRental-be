@@ -10,22 +10,22 @@ namespace ProjectBikeRental.Models
     {
         public int OrderId { get; set; }
         //-> FK
-        public int CustomerId { get; set; }
-        public DateTime StartDate { get; set; }
+/*        public int CustomerId { get; set; }
+*/        public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        [Required]
+        
         public Bike Bike { get; set; }
         [Required]
-        public Customer Customer { get; set; }
+        public string customerEmail { get; set; }
 
         public Orders(){}
 
-        public Orders(DateTime start, DateTime end,Bike bike, Customer customer)
+        public Orders(DateTime start, DateTime end,Bike bike, string customer)
         {
             StartDate = start;
             EndDate = end;
             Bike = bike;
-            Customer = customer;
+            customerEmail = customer;
         }
 
     }
