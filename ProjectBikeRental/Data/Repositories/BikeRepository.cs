@@ -38,11 +38,6 @@ namespace ProjectBikeRental.Data.Repositories
             return _bikes.SingleOrDefault(b => b.ID == id);
         }
 
-        public IEnumerable<Bike> GetBy(Models.BikeType? type = null, BrandEnum? brand = null, Groupset? groupset = null)
-        {
-            return _bikes.Where(b => b.BikeType == type && b.BikeBrand == brand && b.BikeGroupset == groupset);
-        }
-
         public void SaveChanges()
         {
             _context.SaveChanges();
