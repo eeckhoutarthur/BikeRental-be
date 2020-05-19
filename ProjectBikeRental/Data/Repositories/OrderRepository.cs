@@ -25,7 +25,7 @@ namespace ProjectBikeRental.Data.Repositories
 
         public IEnumerable<Orders> GetAll()
         {
-            return _orders.Include(b=>b.Bike).Include(c => c.Customer).ToList().OrderByDescending(o => o.StartDate);
+            return _orders.Include(b=>b.Bike).ToList().OrderByDescending(o => o.StartDate);
         }
 
         public Orders GetBy(int id)
