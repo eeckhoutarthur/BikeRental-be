@@ -35,17 +35,18 @@ namespace ProjectBikeRental.Data
 
                 _dbContext.SaveChanges();
 
-                Bike[] bikes = new Bike[] { new Bike("Tarmac",BrandEnum.Specialized, Groupset.Shimano, BikeType.Road_Bike, true, 5000m),
-                    new Bike("Madone SLR 9 Disc eTap",BrandEnum.Trek, Groupset.Sram, BikeType.Road_Bike, true, 12600m),
-                    new Bike("S-Works Epic Hardtail AXS",BrandEnum.Specialized, Groupset.Sram,BikeType.Mountain_Bike,true,9000m),
-                    new Bike("Kanzoe Ultegra",BrandEnum.Ridley, Groupset.Shimano,BikeType.E_Bike,true,7000m)
+                Bike[] bikes = new Bike[] { new Bike("Tarmac",BrandEnum.Specialized, Groupset.Shimano, BikeType.Road_Bike, true, 20m),
+                    new Bike("Madone SLR 9 Disc eTap",BrandEnum.Trek, Groupset.Sram, BikeType.Road_Bike, true, 25m),
+                    new Bike("S-Works Epic Hardtail AXS",BrandEnum.Specialized, Groupset.Sram,BikeType.Mountain_Bike,true,30m),
+                    new Bike("Kanzoe Ultegra",BrandEnum.Ridley, Groupset.Shimano,BikeType.E_Bike,true,22m)
                 };
                 _dbContext.Bikes.AddRange(bikes);
                 _dbContext.SaveChanges();
 
-                Orders order = new Orders(new DateTime(2020, 02, 13), new DateTime(2020, 02, 16), bikes[0], customer);
-                Orders order2 = new Orders(new DateTime(2020, 02, 14), new DateTime(2020, 02, 16), bikes[1], customer2);
-                _dbContext.Orders.AddRange(new Orders[] { order, order2 });
+                Orders order = new Orders(new DateTime(2020, 02, 13), new DateTime(2020, 02, 16), bikes[0], customer.Email);
+                Orders order2 = new Orders(new DateTime(2020, 02, 14), new DateTime(2020, 02, 16), bikes[1], customer2.Email);
+                Orders order3 = new Orders(new DateTime(2020, 02, 14), new DateTime(2020, 02, 16), bikes[3], customer2.Email);
+                _dbContext.Orders.AddRange(new Orders[] { order, order2,order3 });
                 _dbContext.SaveChanges();
             }
         }

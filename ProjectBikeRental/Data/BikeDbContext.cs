@@ -34,11 +34,8 @@ namespace ProjectBikeRental.Data
             builder.Entity<Customer>().Property(c => c.GSM).IsRequired().HasMaxLength(100);
             builder.Entity<Customer>().Property(c => c.Email).IsRequired().HasMaxLength(100);
 
-/*            builder.Entity<Customer>().HasMany(c => c.Orders).WithOne().IsRequired().OnDelete(DeleteBehavior.Restrict);
-*/
             //-> Mapping Orders
             builder.Entity<Orders>().HasKey(o => o.OrderId);
-            builder.Entity<Orders>().HasOne(o => o.Customer).WithMany().HasForeignKey( c => c.CustomerId);
             builder.Entity<Orders>().HasOne(o => o.Bike);
         }
     }
