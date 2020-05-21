@@ -58,7 +58,8 @@ namespace ProjectBikeRental.Controllers
         [HttpPost]
         public ActionResult<Orders> CreateOrder(Orders order)
         {
-            _orderRepository.Add(new Orders(order.StartDate, order.EndDate, _bikerepo.GetBy(order.Bike.ID), order.customerEmail));
+            //-> Dagen met 1 verhogen omdat fe telkens een dag te weinig geeft
+            _orderRepository.Add(new Orders(order.StartDate.Date.AddDays(1), order.EndDate.Date.AddDays(1), _bikerepo.GetBy(order.Bike.ID), order.customerEmail));
             _orderRepository.SaveChanges();
             return CreatedAtAction(nameof(GetOrder), new { id = order.OrderId }, order);
         }

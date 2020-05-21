@@ -13,13 +13,8 @@ namespace ProjectBikeRental.Models
         public string GSM { get; set; }
         public string Email { get; set; }
 
-/*        public ICollection<Orders> Orders { get; protected set; }
-*/
-
         public Customer()
-        {
-/*            Orders = new List<Orders>();
-*/        }
+        { }
 
         public Customer(string name, string firstName,string gsm, string email) : this()
         {
@@ -28,10 +23,5 @@ namespace ProjectBikeRental.Models
             GSM = gsm;
             Email = email;
         }
-
-/*        public void AddOrder(Orders order)
-        {
-            Orders.Add(order);
-        }*/
     }
 }

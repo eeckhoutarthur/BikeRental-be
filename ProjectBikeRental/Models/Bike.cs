@@ -11,7 +11,6 @@ namespace ProjectBikeRental.Models
     {
         #region Properties
         public int ID { get; set; }
-/*        public int BrandId { get; set; }*/
         [Required]
         public string Name { get; set; }
         [Required]
@@ -23,15 +22,11 @@ namespace ProjectBikeRental.Models
         public Groupset BikeGroupset { get; set; }
         public BikeType BikeType { get; set; }
 
-/*        public ICollection<Orders> Orders { get; private set; }*/
-
         #endregion
 
         #region Constructors
         public Bike()
-        {
-/*            Orders = new List<Orders>();*/
-        }
+        {}
 
         public Bike(string name, BrandEnum bikeBrand, Groupset bikeGroupset, BikeType bikeType, bool discBrakes, decimal price)
         {

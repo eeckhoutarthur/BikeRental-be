@@ -6,22 +6,22 @@
     <members>
         <member name="M:ProjectBikeRental.Controllers.AccountController.Login(ProjectBikeRental.DTO.LoginDTO)">
             <summary>
-            Login
+            Inloggen van een bestaande gebruiker
             </summary>
-            <param name="model">the login details</param>
+            <param name="model">De gegevens van de gebruiker</param>
         </member>
         <member name="M:ProjectBikeRental.Controllers.AccountController.Register(ProjectBikeRental.DTO.RegisterDTO)">
             <summary>
-            Register a user
+            Registreren van een nieuwe gebruiker
             </summary>
-            <param name="model">the user details</param>
+            <param name="model">De gegevens van de nieuwe gebruiker</param>
             <returns></returns>
         </member>
         <member name="M:ProjectBikeRental.Controllers.AccountController.CheckAvailableUserName(System.String)">
             <summary>
-            Checks if an email is available as username
+            Controleert of de email nog kan gebruikt worden als username. Email is namelijk uniek
             </summary>
-            <returns>true if the email is not registered yet</returns>
+            <returns>True wanneer de email nog niet is gebruikt</returns>
             <param name="email">Email.</param>/
         </member>
         <member name="M:ProjectBikeRental.Controllers.BikesController.GetBikes">

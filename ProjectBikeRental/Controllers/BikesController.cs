@@ -49,22 +49,6 @@ namespace ProjectBikeRental.Controllers
             return bike;
         }
 
-        ///// <summary>
-        ///// Geeft de klant met het meegegeven id terug
-        ///// </summary>
-        ///// <param name="email">De email van de klant</param>
-        ///// <returns>De fiets</returns>
-        //[HttpGet("{email}")]
-        //public ActionResult<Customer> GetCustomer(string email)
-        //{
-        //    Customer customer = _customerRepository.GetByEmail(email);
-        //    if (email == null)
-        //        return NotFound();
-        //    return customer;
-        //}
-
-
-
         /// <summary>
         /// Voegt een nieuwe fiets toe
         /// </summary>

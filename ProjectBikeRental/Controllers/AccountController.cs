@@ -18,7 +18,6 @@ namespace ProjectBikeRental.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-/*    [ApiConventionType(typeof(DefaultApiConventions))]*/
     public class AccountController : ControllerBase
     {
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -39,9 +38,9 @@ namespace ProjectBikeRental.Controllers
         }
 
         /// <summary>
-        /// Login
+        /// Inloggen van een bestaande gebruiker
         /// </summary>
-        /// <param name="model">the login details</param>
+        /// <param name="model">De gegevens van de gebruiker</param>
         [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult<string>> Login(LoginDTO model)
@@ -62,9 +61,9 @@ namespace ProjectBikeRental.Controllers
         }
 
         /// <summary>
-        /// Register a user
+        /// Registreren van een nieuwe gebruiker
         /// </summary>
-        /// <param name="model">the user details</param>
+        /// <param name="model">De gegevens van de nieuwe gebruiker</param>
         /// <returns></returns>
         [HttpPost("register")]
         [AllowAnonymous]
@@ -86,9 +85,9 @@ namespace ProjectBikeRental.Controllers
         }
 
         /// <summary>
-        /// Checks if an email is available as username
+        /// Controleert of de email nog kan gebruikt worden als username. Email is namelijk uniek
         /// </summary>
-        /// <returns>true if the email is not registered yet</returns>
+        /// <returns>True wanneer de email nog niet is gebruikt</returns>
         /// <param name="email">Email.</param>/
         [AllowAnonymous]
         [HttpGet("checkusername")]
