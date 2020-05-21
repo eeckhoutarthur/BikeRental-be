@@ -18,8 +18,4 @@
     <ProjectReference Include="..\ProjectBikeRental\ProjectBikeRental.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>

@@ -41,7 +41,7 @@ namespace BikeRentalTest.Controllers
         }
 
         [Fact]
-        public void GetAll_GeeftAlleBikesTerug()
+        public void GetBikes_GeeftAlleBikesTerug()
         {
             _bikeRepo.Setup(s => s.GetAll()).Returns(_dbContext.alleBikes);
             var result = Assert.IsAssignableFrom<IEnumerable<Bike>>(_bikesController.GetBikes());
