@@ -58,8 +58,34 @@ De API zal een true teruggeven wanneer het emailadres nog niet bestaat.
 
 In dit geval retourneert de API een false omdat dit account al bestaat. Wij hebben dit zonet aangemaakt bij het registreren.
 
+## OrderController
+![](/images/endpointsOrder.png)
 
+### GetById
+Deze endpoint is beveiligd. Dit wil zeggen dat de bezoeker op de website moet aangemeld zijn.
 
+![](/images/getOrder.png)
+
+Momenteel zijn wij niet aangemeld met de admin. Daarom krijgen wij een 401 Unauthorized Error.
+
+![](/images/getOrderSucces.png)
+Na het aanmelden krijgen wij wel de juiste response.
+
+### GetOrders
+Deze endpoint is opnieuw beveiligd, deze endpoint is enkel toegenkelijk voor de admin, namelijk arthur.eeckhout@student.hogent.be
+
+![](/images/GetAllOrders.png)
+
+Wanneer er niet is ingelogd als admin zullen wij opnieuw een 401 Unauthorized Error krijgen.
+
+### addOrder
+Deze endpoint is enkel toegankelijk voor een ingelogde gebruiker of admin.
+
+Vergeet niet om een bike toe te voegen bij de aanmaak!
+![](/images/addOrder.png)
+![](/images/addOrderResponse.png)
+
+Ook hier krijgen wij een 401 Unauthorized Error wanneer er niet is ingelogd.
 
 ## Klassendiagram
 Op dit moment wordt de klasse Brand nog niet gebruikt. Momenteel maak ik gebruik van de enum klasse.
