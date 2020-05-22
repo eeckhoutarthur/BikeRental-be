@@ -2,7 +2,7 @@
 
 ## Swagger documentatie
 ## BikesController
-![](/images/OverzichtEndpoints.PNG)
+![](/images/EndpointsBike.png)
 
 ### GetBikes
 ![](/images/GetBikes.PNG)
