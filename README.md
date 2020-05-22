@@ -88,9 +88,11 @@ Vergeet niet om een bike toe te voegen bij de aanmaak!
 Ook hier krijgen wij een 401 Unauthorized Error wanneer er niet is ingelogd.
 
 ## Klassendiagram
-Op dit moment wordt de klasse Brand nog niet gebruikt. Momenteel maak ik gebruik van de enum klasse.
+### Models
+![](/images/classDModels.png)
 
-![](/images/klassendiagramGoed.PNG)
+### Controllers
+![](/images/classDControllers.png)
 
 ### Database
 In het dossier staat een duidelijkere afbeelding
