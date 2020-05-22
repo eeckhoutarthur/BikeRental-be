@@ -99,6 +99,3 @@ Op dit moment wordt de klasse Brand nog niet gebruikt. Momenteel maak ik gebruik
 Om het project uit te voeren, dien je op de startknop "ProjectBikeRental" te klikken, en niet op "iis Express".
 Wanneer het project opgestart is, kunt u zien wat er wordt teruggegeven door de API.
 Om de Swagger documentatie raad te plegen wijzigt u in de url "api/Bikes" naar swagger.
-
-Verder heb ik nog een fout met het seeden van de database. De code staat al op zijn plaats, maar wel nog in commentaar.
-Dit los ik zo snel mogelijk op.
