@@ -18,12 +18,6 @@ De nieuwe fiets staat nu tussen de lijst.
 ![](/images/GetBikeId1.PNG)
 ![](/images/GetBikeIdDeel1.PNG)
 
-### UpdateBike
-![](/images/EditBikeDeel1.PNG)
-![](/images/EditBikeDeel2.PNG)
-![](/images/EditBikeDeel3.PNG)
-Dit kan terug op dezelfde manier gecontroleerd worden, zoals bij de CreateBike.
-
 ### DeleteBike
 ![](/images/DelBikeDeel1.PNG)
 ![](/images/DelBikeDeel2.PNG)
