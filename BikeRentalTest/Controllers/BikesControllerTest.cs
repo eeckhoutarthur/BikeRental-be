@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Moq;
 using ProjectBikeRental.Controllers;
+using ProjectBikeRental.DTO;
 using ProjectBikeRental.Models;
 using System;
 using System.Collections.Generic;
@@ -51,9 +52,14 @@ namespace BikeRentalTest.Controllers
         [Fact]
         public void CreateBike_MaaktEenFiets()
         {
-            Bike bike = new Bike("Venge", BrandEnum.Specialized, Groupset.Shimano, BikeType.Road_Bike, true, 10m);
-
-            var result = _bikesController.CreateBike(bike);
+            BikeDTO dto = new BikeDTO();
+            dto.Name = "Venge";
+            dto.BikeBrand = BrandEnum.Specialized;
+            dto.BikeGroupset = Groupset.Shimano;
+            dto.BikeType = BikeType.Road_Bike;
+            dto.DiscBrakes = true;
+            dto.Price = 10m;
+            var result = _bikesController.CreateBike(dto);
             Assert.IsType<ActionResult<Bike>>(result);
         }
     }
