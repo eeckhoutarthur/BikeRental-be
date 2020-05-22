@@ -93,7 +93,8 @@ Op dit moment wordt de klasse Brand nog niet gebruikt. Momenteel maak ik gebruik
 ![](/images/klassendiagramGoed.PNG)
 
 ### Database
-![](/images/klassendiagram.PNG)
+In het dossier staat een duidelijkere afbeelding
+![](/images/DB.png)
 
 ## Opstart
 Om het project uit te voeren, dien je op de startknop "ProjectBikeRental" te klikken, en niet op "iis Express".
