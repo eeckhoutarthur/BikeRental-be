@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ProjectBikeRental</name>
+    </assembly>
+    <members>
+        <member name="M:ProjectBikeRental.Controllers.AccountController.Login(ProjectBikeRental.DTO.LoginDTO)">
+            <summary>
+            Inloggen van een bestaande gebruiker
+            </summary>
+            <param name="model">De gegevens van de gebruiker</param>
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.AccountController.Register(ProjectBikeRental.DTO.RegisterDTO)">
+            <summary>
+            Registreren van een nieuwe gebruiker
+            </summary>
+            <param name="model">De gegevens van de nieuwe gebruiker</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.AccountController.CheckAvailableUserName(System.String)">
+            <summary>
+            Controleert of de email nog kan gebruikt worden als username. Email is namelijk uniek
+            </summary>
+            <returns status="200">True wanneer de email nog niet is gebruikt. Zie bovenstaande server response na uitvoering.</returns>
+            <param name="email">Email.</param>/
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.BikesController.GetBikes">
+            <summary>
+            Geeft alle fietsen terug, gesorteerd op stijgende prijs
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.BikesController.Get(System.Int32)">
+            <summary>
+            Geeft de fiets met het meegegeven id terug
+            </summary>
+            <param name="id">De id van de fiets</param>
+            <returns>De fiets</returns>
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.BikesController.CreateBike(ProjectBikeRental.DTO.BikeDTO)">
+            <summary>
+            Voegt een nieuwe fiets toe
+            </summary>
+            <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.BikesController.DeleteBike(System.Int32)">
+            <summary>
+            Verwijderd een fiets 
+            </summary>
+            <param name="id">De id van de fiets die verwijderd moet worden</param>
+            <returns></returns>
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.OrderController.GetOrder(System.Int32)">
+            <summary>
+            Geeft de bestelling met het meegegeven id terug
+            </summary>
+            <param name="id">De id van de order</param>
+            <returns>De fiets</returns>*/
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.OrderController.GetAll">
+            <summary>
+            Geeft alle bestellingen terug. De fietsen die eerst moeten verhuurd worden komt boven in de lijst te staan.
+            </summary>
+            <returns>De fiets</returns>*/
+        </member>
+        <member name="M:ProjectBikeRental.Controllers.OrderController.CreateOrder(ProjectBikeRental.Models.Orders)">
+            <summary>
+            Voegt een nieuwe bestelling toe
+            </summary>
+            <remarks>Het id dient niet ingevuld te worden, dit gebeurt automatisch. De waarde mag dus op 0 blijven staan.</remarks>
+            <returns></returns>*/
+        </member>
+    </members>
+</doc>

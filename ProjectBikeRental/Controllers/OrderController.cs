@@ -30,6 +30,7 @@ namespace ProjectBikeRental.Controllers
         /// <param name="id">De id van de order</param>
         /// <returns>De fiets</returns>*/
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public ActionResult<Orders> GetOrder(int id)
         {
             Orders order = _orderRepository.GetBy(id);
@@ -44,6 +45,7 @@ namespace ProjectBikeRental.Controllers
         /// <returns>De fiets</returns>*/
         [HttpGet]
         [Authorize(Policy = "AdminOnly")]
+        [AllowAnonymous]
         public IEnumerable<Orders> GetAll()
         {
             return _orderRepository.GetAll().OrderBy(o => o.StartDate);
