@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="ProjectBikeRental.Controllers.AccountController">
+    <Position X="0.75" Y="1" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAIBAAAAAAAAAAAAABEAAAAAAABAAAAAAAQBAAAAAg=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBikeRental.Controllers.BikesController">
+    <Position X="8.25" Y="1" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEABAgAAgAAAAAAAAAAAAAAAABABAAAA=</HashCode>
+      <FileName>Controllers\BikesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectBikeRental.Controllers.OrderController">
+    <Position X="5" Y="1" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQAAAAAQAAAAAAAAAAAAAAAAAAAAAgAAABAAAAA=</HashCode>
+      <FileName>Controllers\OrderController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
