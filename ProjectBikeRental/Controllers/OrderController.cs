@@ -27,7 +27,7 @@ namespace ProjectBikeRental.Controllers
         /// <summary>
         /// Geeft de bestelling met het meegegeven id terug
         /// </summary>
-        /// <param name="id">De email van de klant</param>
+        /// <param name="id">De id van de order</param>
         /// <returns>De fiets</returns>*/
         [HttpGet("{id}")]
         public ActionResult<Orders> GetOrder(int id)
@@ -39,12 +39,11 @@ namespace ProjectBikeRental.Controllers
         }
 
         /// <summary>
-        /// Geeft alle bestellingen terug. De fiets die eerst moet verhuurd worden komt boven in de lijst te staan.
+        /// Geeft alle bestellingen terug. De fietsen die eerst moeten verhuurd worden komt boven in de lijst te staan.
         /// </summary>
         /// <returns>De fiets</returns>*/
         [HttpGet]
         [Authorize(Policy = "AdminOnly")]
-        [AllowAnonymous]
         public IEnumerable<Orders> GetAll()
         {
             return _orderRepository.GetAll().OrderBy(o => o.StartDate);

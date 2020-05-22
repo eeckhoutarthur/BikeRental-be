@@ -87,7 +87,7 @@ namespace ProjectBikeRental.Controllers
         /// <summary>
         /// Controleert of de email nog kan gebruikt worden als username. Email is namelijk uniek
         /// </summary>
-        /// <returns>True wanneer de email nog niet is gebruikt</returns>
+        /// <returns status="200">True wanneer de email nog niet is gebruikt. Zie bovenstaande server response na uitvoering.</returns>
         /// <param name="email">Email.</param>/
         [AllowAnonymous]
         [HttpGet("checkusername")]
