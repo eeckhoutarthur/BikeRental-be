@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProjectBikeRental.DTO;
 using ProjectBikeRental.Models;
 
 namespace ProjectBikeRental.Controllers
@@ -56,29 +57,12 @@ namespace ProjectBikeRental.Controllers
         /// <returns></returns>
         [HttpPost]
         [Authorize(Policy = "AdminOnly")]
-        public ActionResult<Bike> CreateBike(Bike bike)
+        public ActionResult<Bike> CreateBike(BikeDTO bike)
         {
-            _bikeRepository.Add(bike);
+            Bike newBike = new Bike(bike.Name,bike.BikeBrand,bike.BikeGroupset,bike.BikeType,bike.DiscBrakes,bike.Price);
+            _bikeRepository.Add(newBike);
             _bikeRepository.SaveChanges();
-            return CreatedAtAction(nameof(Get), new { id = bike.ID }, bike);
-        }
-
-        /// <summary>
-        /// Past een bestaande fiets aan
-        /// </summary>
-        /// <param name="id">De id van de fiets die moet aangepast worden. <br /> Bij het invullen van een lege id zal er een 404 foutmelding verschijnen</param>
-        /// <remarks>Bij het bewerken van de gegevens geef je het vedlje "id" de id van de fiets die bewerkt moet worden.</remarks>
-        /// <returns></returns>
-        [HttpPut("{id}")]
-        [Authorize(Policy = "AdminOnly")]
-        public IActionResult UpdateBike(int id, Bike bike)
-        {
-            if (id != bike.ID)
-                return NotFound(); //-> Dit zal een 404 response terugsturen
-
-            _bikeRepository.Update(bike);
-            _bikeRepository.SaveChanges();
-            return NoContent(); //-> Dit zal een 204 response terugsturen
+            return CreatedAtAction(nameof(Get), new { id = newBike.ID }, bike);
         }
 
         /// <summary>
